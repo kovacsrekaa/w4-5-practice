@@ -1,76 +1,24 @@
-let x = "asd"
-let y = 12
-let z = false
+console.log("Hello World")
 
-let arr = ["egy","kettő","három"]
-let arr2 = [10,2,67]
-let arr3= [true, false, true]
-let arr4= ["string", 1, false]
-
-let obj1 ={
-    key1: "value",
-    key2: 101,
-    key3: false,
-    key4: [
-        "cat",
-        "dog",
-        "chicken"
-    ],
-
-    key5: {
-        nestedKey: "text",
-        nestedKey2: 66
-    },
-    users: [
-        {
-            name: "Gipsz Jakab",
-            age: 28
-
-        },
-        {
-            name: "John Doe",
-            age:66,
-            isActive: false,
-            pets: ["Jani", "Laci"]
-
-        }
-
-    ]
+function domManipulation(){
+    const rootElement = document.querySelector("#root")
+    console.log(rootElement)
+    rootElement.innerHTML = "This is a done by dom manipulation"
 }
 
-// console.log(obj1)
-
-
-// function myFunc(){
-//     console.log("This is my function")
-// }
-
-// myFunc()
-
-// function greetMe(param) {
-//     console.log(`Szia ${param}!`)
-// }
-
-// greetMe("argument")
-
-
-// function addTwoNumbers(number1,number2){
-//     let sum = number1 + number2
-//     console.log(`The sum of two numbers (${number1}, ${number2}) is: ${sum}`)
-//     return sum
-// }
-
-// let resultOfAddTwoNumbers = addTwoNumbers(10,2)
-// console.log(`The result of resultOfAddTwoNumbers: ${resultOfAddTwoNumbers}`)
-
-
-function cbExample(){
-    console.log("i am a callback function")
+function logClick(){
+    console.log('clicked')
 }
 
-function funcExample(name, callback) {
-    console.log(`hello ${name}`)
-    callback()
+let tickCount = 0
+
+function logTick(){
+    console.log(`tick ${tickCount}`)
+    tickCount++
 }
 
-funcExample("Reka", cbExample)
+window.addEventListener('load', domManipulation)
+window.addEventListener('click', logClick)
+
+window.setInterval(logClick, 1000)
+
